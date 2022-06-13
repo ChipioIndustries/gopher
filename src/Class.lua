@@ -56,7 +56,10 @@ function Class:getAllMembersByTag(tag, recursive)
 	return members
 end
 
-function Class:getMember(name)
+function Class:getMember(name, recursive)
+	if not self._members[name] and recursive and self.superclass then
+		return self.superclass:getMember(name, true)
+	end
 	return self._members[name]
 end
 
