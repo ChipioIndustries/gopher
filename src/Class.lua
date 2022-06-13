@@ -1,3 +1,5 @@
+local Llama = require(script.Parent.Parent.Llama)
+
 local Class = {}
 Class.__index = Class
 
@@ -22,9 +24,7 @@ function Class:getAllMembers(recursive)
 	end
 
 	if recursive and self.superclass then
-		for memberName, member in pairs(self.superclass:getAllMembers(true)) do
-			members[memberName] = member
-		end
+		members = Llama.Dictionary.join(members, self.superclass:getAllMembers(true))
 	end
 
 	return members

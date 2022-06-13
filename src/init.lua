@@ -16,12 +16,14 @@ local versionId = retry(
 	Constants.VERSION_ENDPOINT
 )
 
-Gopher._dump = retry(
-	Constants.RETRY_DELAY,
-	Constants.MAX_RETRIES,
-	HttpService.GetAsync,
-	HttpService,
-	Constants.DUMP_ENDPOINT:format(versionId)
+Gopher._dump = HttpService:JSONDecode(
+	retry(
+		Constants.RETRY_DELAY,
+		Constants.MAX_RETRIES,
+		HttpService.GetAsync,
+		HttpService,
+		Constants.DUMP_ENDPOINT:format(versionId)
+	)
 )
 
 function Gopher.new()
