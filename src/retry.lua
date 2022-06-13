@@ -8,7 +8,7 @@ local function retry(retryDelay, maxRetries, callback, ...)
 		if not success and retryDelay then
 			task.wait(retryDelay)
 		end
-	until success or maxRetries >= retries
+	until success or maxRetries <= retries
 
 	if not success then
 		error(result)

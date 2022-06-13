@@ -5,7 +5,7 @@ return function()
 		local attempts = 0
 		local function errorTill()
 			attempts += 1
-			assert(attempts == count)
+			assert(attempts == count, "Intentional error")
 		end
 		return errorTill
 	end
