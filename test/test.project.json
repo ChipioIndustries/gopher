@@ -23,6 +23,13 @@
 			"TestExecution": {
 				"$path": "TestExecution.server.lua"
 			}
+		},
+
+		"HttpService": {
+			"$className": "HttpService",
+			"$properties": {
+				"HttpEnabled": true
+			}
 		}
 	}
 }

@@ -9,8 +9,8 @@ function Class.new(class)
 		_members = {};
 	}, Class)
 
-	for _index, member in ipairs(class._members) do
-		self.members[member.Name] = member
+	for _index, member in ipairs(class.Members) do
+		self._members[member.Name] = member
 	end
 
 	return self
