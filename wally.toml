@@ -1,7 +1,7 @@
 [package]
 name = "chipioindustries/gopher"
 description = "Grabs the latest Roblox API dump for use in plugins or games"
-version = "0.1.0"
+version = "1.0.0"
 registry = "https://github.com/UpliftGames/wally-index"
 realm = "shared"
 
