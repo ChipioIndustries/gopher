@@ -19,7 +19,7 @@ function Feature({Svg, title, description}) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
-        <img className={styles.featureSvg} src="/pounce/img/aires.png" role="img" />
+        <img className={styles.featureSvg} src="/gopher/img/aires.png" role="img" />
       </div>
       <div className="text--center padding-horiz--md">
         <h3>{title}</h3>

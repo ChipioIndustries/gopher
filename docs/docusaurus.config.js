@@ -57,7 +57,7 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'dev-setup',
+            docId: 'installation',
             position: 'left',
             label: 'Get Started',
           },
