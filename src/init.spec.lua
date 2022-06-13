@@ -1,0 +1,26 @@
+return function()
+	local Gopher = require(script.Parent)
+
+	describe("Gopher", function()
+		describe("getRawDump", function()
+			it("should return the raw dump", function()
+				expect(Gopher._dump).to.be.ok()
+				expect(Gopher._dump.Members).to.be.ok()
+				expect(Gopher._dump.Enums).to.be.ok()
+			end)
+
+			it("should return a class object", function()
+				local result = Gopher:getClass()
+				expect(result).to.be.ok()
+				expect(result._members).to.be.ok()
+			end)
+
+			it("should return class objects", function()
+				local result = Gopher:getAllClasses()
+				expect(result).to.be.ok()
+				expect(result.Instance).to.be.ok()
+				expect(result.Instance._members).to.be.ok()
+			end)
+		end)
+	end)
+end
