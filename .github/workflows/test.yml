@@ -85,7 +85,6 @@ jobs:
       run: cat test-out.txt
     - name: Check test status
       shell: bash
-      run: cat test-out.txt | grep "0 failed" || (cat test-out.txt && exit 1)
-    - name: Check test status
-      shell: bash
-      run: cat test-out.txt | grep "Error during planning" || (cat test-out.txt && exit 1)
+      run: |
+        cat test-out.txt | grep "0 failed" || (cat test-out.txt && exit 1);
+        if grep -q "Error during planning" "test-out.txt"; then (cat test-out.txt && exit 1); fi
