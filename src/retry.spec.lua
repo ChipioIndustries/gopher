@@ -35,7 +35,7 @@ return function()
 		it("should delay with retryDelay", function()
 			local start = tick()
 			retry(0.21, 3, makeErrorFunction(3))
-			expect((tick() - start) > 0.6).to.equal(true)
+			expect((tick() - start) > 0.4).to.equal(true)
 		end)
 	end)
 end
